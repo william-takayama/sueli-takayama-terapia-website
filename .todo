@@ -1,0 +1,4 @@
+[ ] - Add unit tests with RTL
+[ ] - Add basic test with Playwright
+[ ] - Create CI pipeline to deploy using github actions and vercel
+[ ] - 
