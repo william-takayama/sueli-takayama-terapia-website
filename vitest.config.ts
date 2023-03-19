@@ -11,7 +11,6 @@ export default defineConfig({
     include: ['**/*.(test|spec).(ts|tsx)'],
     root: 'src',
     logHeapUsage: true,
-    globals: true,
     cache: {
       dir: fileURLToPath(new URL('./node_modules/.vitest', import.meta.url)),
     },
@@ -20,7 +19,9 @@ export default defineConfig({
     alias: [
       {
         find: '@next/font/google',
-        replacement: fileURLToPath(new URL('./src/mocks', import.meta.url)),
+        replacement: fileURLToPath(
+          new URL('./src/__tests__/mocks', import.meta.url)
+        ),
       },
       {
         find: '@/',
