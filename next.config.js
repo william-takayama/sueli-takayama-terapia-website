@@ -2,7 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   optimizeFonts: true,
-  distDir: 'build',
 };
 
 module.exports = nextConfig;
