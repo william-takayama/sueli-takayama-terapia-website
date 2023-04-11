@@ -43,8 +43,21 @@ const Home: NextPage<IHomeProps> = ({ isMobile }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {CONTENT.map(
-        ({ id, title, image, description, subTitle, CTAS }, index) => {
+        (
+          {
+            id,
+            backgroundColor,
+            useAnimation,
+            title,
+            image,
+            description,
+            subTitle,
+            CTAS,
+          },
+          index
+        ) => {
           const isOdd = index % 2 === 0;
+          const isLast = CONTENT.length - 1 === index;
 
           const handleRef = (node: HTMLDivElement) => {
             const map = getMap();
@@ -65,10 +78,11 @@ const Home: NextPage<IHomeProps> = ({ isMobile }) => {
             >
               <GridItem
                 w="full"
-                bgColor={isOdd ? 'gray.50' : 'teal.400'}
+                bgColor={backgroundColor ? backgroundColor : 'gray.50'}
+                // bgColor={isOdd || isLast ? 'gray.50' : 'teal.400'}
                 position="relative"
               >
-                {!isOdd && <AnimatedDots isMobile={isMobile} />}
+                {useAnimation && <AnimatedDots isMobile={isMobile} />}
                 <Content
                   CTAS={CTAS}
                   description={description}
@@ -76,7 +90,7 @@ const Home: NextPage<IHomeProps> = ({ isMobile }) => {
                   subTitle={subTitle}
                   scrollIntoView={scrollIntoView}
                   nextIndex={index + 1}
-                  isLast={CONTENT.length - 1 === index}
+                  isLast={isLast}
                 />
               </GridItem>
               <GridItem position="relative" w="full" h="full">

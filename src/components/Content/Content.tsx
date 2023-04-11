@@ -88,6 +88,7 @@ export const Content = ({
           as={nextIndex > 1 ? 'h2' : 'h1'}
           color={title.color}
           fontSize={['1.5em', '3.5em']}
+          mt={subTitle ? 0 : 8}
         >
           {title.text}
         </Heading>

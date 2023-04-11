@@ -5,17 +5,22 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { HiArrowDown, HiArrowUp } from 'react-icons/hi';
 
 import mainImage from '../../public/images/capa-01.jpg';
-import bg2 from '../../public/images/bg-02.jpg';
-import bg3 from '../../public/images/bg-03.jpg';
-import bg4 from '../../public/images/bg-04.jpg';
-import bg5 from '../../public/images/bg-05.jpg';
+import mente_subconsciente from '../../public/images/mente-subconsciente.jpg';
+import access_bars_background from '../../public/images/access-bars-background.jpg';
+import family_constellations_background from '../../public/images/family-constellations-background.jpg';
+import body_mind_talk_background from '../../public/images/body-mind-talk-background.jpg';
+import calatonia_background from '../../public/images/calatonia-background.png';
+import selfHealing from '../../public/images/bg-07.jpg';
 
-const teal = theme.colors.teal[400];
 const gray700 = theme.colors.gray[700];
+const blue700 = theme.colors.blue[700];
+const yellow800 = theme.colors.yellow[800];
+const orange100 = theme.colors.orange[100];
 
 export const CONTENT = [
   {
-    id: 'home-content-wrapper-001',
+    id: 'presentation',
+    useAnimation: false,
     subTitle: {
       text: 'Terapeuta',
       color: '#9DACB5',
@@ -29,12 +34,12 @@ export const CONTENT = [
       alt: 'main-picture',
     },
     description: {
-      text: 'Trabalho terapêutico atendendo a demanda do cliente que me procura com queixas, sendo as mais diversas, como: doenças físicas, emocionais, psiquiátricas, problemas de relacionamento interpessoal, problemas amorosos, problemas financeiros, etc.',
+      text: 'Trabalho terapêutico - atendo a demanda do cliente que me procura com queixas das mais diversas, como: doenças físicas, emocionais, psiquiátricas, traumas, problemas de relacionamento interpessoal, problemas amorosos, problemas financeiros, etc.',
       color: 'rgba(0,0,0,0.49)',
     },
     CTAS: [
       {
-        id: 'home-content-wrapper-00whatsapp-button-1',
+        id: 'whatsapp-button',
         title: 'Whatsapp',
         icon: <FaWhatsapp color="white" />,
         bgColor: 'teal.400',
@@ -42,7 +47,7 @@ export const CONTENT = [
         action: CTAActionName.WHATSAPP,
       },
       {
-        id: 'home-content-wrapper-00check-more-button-1',
+        id: 'check-more-button-presentation',
         title: 'Continue lendo',
         icon: <HiArrowDown color={gray700} />,
         bgColor: 'gray.100',
@@ -52,55 +57,54 @@ export const CONTENT = [
     ],
   },
   {
-    id: 'home-content-wrapper-002',
+    id: 'psych-k',
+    useAnimation: true,
+    backgroundColor: blue700,
     subTitle: {
       text: 'Métodos utilizados',
       color: 'white',
     },
     title: {
-      text: 'PSYCH-K',
+      text: 'PSYCH-K ®',
       color: 'white',
     },
     image: {
-      src: bg2,
-      alt: 'bg-2',
+      src: mente_subconsciente,
+      alt: 'psych-k',
     },
     description: {
-      text: 'O PSYCH-K é uma abordagem que ajuda a superar padrões de pensamento negativos e crenças limitantes, promovendo a realização pessoal e o desenvolvimento humano.',
+      text: 'O PSYCH-K® é uma ferramenta técnica segura que respeita o processo evolutivo de autoconhecimento, que permite mudar crenças limitantes de forma rápida e eficiente, dando ao indivíduo o empoderamento de seu processo para criar novas formas de sua realidade.',
       color: 'white',
     },
     CTAS: [
       {
-        id: 'home-content-wrapper-00check-more-button-2',
+        id: 'check-more-button-psych-k',
         title: 'Continue lendo',
-        icon: <HiArrowDown color={teal} />,
+        icon: <HiArrowDown color={blue700} />,
         bgColor: 'gray.100',
-        color: 'teal.400',
+        color: 'blue.700',
         action: CTAActionName.SCROLL,
       },
     ],
   },
   {
-    id: 'home-content-wrapper-003',
-    subTitle: {
-      text: 'Métodos utilizados',
-      color: '#9DACB5',
-    },
+    id: 'access-bars',
+    useAnimation: false,
     title: {
       text: 'Barras de Access',
       color: 'black',
     },
     image: {
-      src: bg3,
-      alt: 'bg-3',
+      src: access_bars_background,
+      alt: 'access-bars',
     },
     description: {
-      text: 'Barras de Access é uma terapia energética que consiste em toques suaves em pontos específicos da cabeça, promovendo relaxamento profundo e equilíbrio emocional.',
+      text: 'Criada por Gary Douglas, é uma terapia energética que consiste em toques sutis em 32 pontos específicos da cabeça, “deletando” crenças. limitantes, promovendo relaxamento profundo e equilíbrio fisico-emocional. Processos Corporais - do Access Consciousness',
       color: 'rgba(0,0,0,0.49)',
     },
     CTAS: [
       {
-        id: 'home-content-wrapper-00check-more-button-3',
+        id: 'check-more-button-access-bars',
         title: 'Continue lendo',
         icon: <HiArrowDown color={gray700} />,
         bgColor: 'gray.100',
@@ -110,47 +114,99 @@ export const CONTENT = [
     ],
   },
   {
-    id: 'home-content-wrapper-004',
-    subTitle: {
-      text: 'Métodos utilizados',
-      color: 'white',
-    },
+    id: 'family-constellations',
+    useAnimation: true,
+    backgroundColor: yellow800,
     title: {
       text: 'Constelações familiares',
       color: 'white',
     },
     image: {
-      src: bg4,
-      alt: 'bg-4',
+      src: family_constellations_background,
+      alt: 'family-constellations',
     },
     description: {
-      text: 'Constelações Familiares é uma abordagem terapêutica que ajuda as pessoas a se reconectarem com suas raízes familiares, promovendo a cura e a compreensão dos traumas do passado.',
+      text: 'Constelações Familiares, criada por Bert Helinger, é uma abordagem terapêutica que ajuda as pessoas a se reconectarem com suas raízes familiares, promovendo a compreensão e a cura das repetições de padrões comportamentais transgeracionais e de traumas do passado.',
       color: 'white',
     },
     CTAS: [
       {
-        id: 'home-content-wrapper-00check-more-button-4',
+        id: 'check-more-button-family-constellations',
         title: 'Continue lendo',
-        icon: <HiArrowDown color={teal} />,
+        icon: <HiArrowDown color={yellow800} />,
         bgColor: 'gray.100',
-        color: 'teal.400',
+        color: 'yellow.800',
         action: CTAActionName.SCROLL,
       },
     ],
   },
   {
-    id: 'home-content-wrapper-005',
+    id: 'body-mind-talk',
+    useAnimation: false,
+    title: {
+      text: 'Body Mind Talk (BMT)',
+      color: 'black',
+    },
     image: {
-      src: bg5,
-      alt: 'bg-5',
+      src: body_mind_talk_background,
+      alt: 'body-mind-talk',
     },
     description: {
-      text: 'Cada cliente tem sua demanda, sendo assim vou orquestrando a utilização dos recursos técnicos que disponho para ajudar o indivíduo a elaborar suas questões e sua auto cura.',
+      text: 'Criado por Nehemias Tavares, trabalha com as “chaves” do corpo e da mente ativamos os potenciais inconscientes de cura, transformação e revitalização do corpo e da mente',
       color: 'rgba(0,0,0,0.49)',
     },
     CTAS: [
       {
-        id: 'home-content-wrapper-00check-more-button-5',
+        id: 'check-more-button-body-mind-talk',
+        title: 'Continue lendo',
+        icon: <HiArrowDown color={gray700} />,
+        bgColor: 'gray.100',
+        color: 'gray.700',
+        action: CTAActionName.SCROLL,
+      },
+    ],
+  },
+  {
+    id: 'calatonia',
+    useAnimation: true,
+    backgroundColor: orange100,
+    title: {
+      text: 'Calatonia',
+      color: 'black',
+    },
+    image: {
+      src: calatonia_background,
+      alt: 'calatonia',
+    },
+    description: {
+      text: 'Cinesiologia Psicológica, criada por Petho Sandor, é uma abordagem corporal que trabalha a integração corpo-mente, através de toques sutis. Costumo dizer: “seu corpo sabe tudo de vc e ele não mente jamais” e, nessa “conversa” com o corpo, , facilito a integração fisio-psíquica.',
+      color: 'rgba(0,0,0,0.49)',
+    },
+    CTAS: [
+      {
+        id: 'check-more-button-calatonia',
+        title: 'Continue lendo',
+        icon: <HiArrowDown color={orange100} />,
+        bgColor: 'orange.700',
+        color: 'orange.100',
+        action: CTAActionName.SCROLL,
+      },
+    ],
+  },
+  {
+    id: 'wrap-up',
+    useAnimation: false,
+    image: {
+      src: selfHealing,
+      alt: 'wrap-up',
+    },
+    description: {
+      text: 'Estou a serviço do cliente, no processo de autoconhecimento e autocura.',
+      color: 'rgba(0,0,0,0.49)',
+    },
+    CTAS: [
+      {
+        id: 'home-content-wrapper-00check-more-button-7',
         title: 'Voltar para o topo',
         icon: <HiArrowUp color={gray700} />,
         bgColor: 'gray.100',
