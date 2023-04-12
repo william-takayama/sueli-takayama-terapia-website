@@ -6,6 +6,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
 import { AnimatedDots } from '@/components/AnimatedDots/AnimatedDots';
+import { FOOTER_HEIGHT_LARGE, FOOTER_HEIGHT_SMALL } from '@/constants/size';
 
 interface IHomeProps {
   isMobile: boolean;
@@ -56,7 +57,6 @@ const Home: NextPage<IHomeProps> = ({ isMobile }) => {
           },
           index
         ) => {
-          const isOdd = index % 2 === 0;
           const isLast = CONTENT.length - 1 === index;
 
           const handleRef = (node: HTMLDivElement) => {
@@ -72,14 +72,22 @@ const Home: NextPage<IHomeProps> = ({ isMobile }) => {
             <Flex
               data-testid={id}
               key={id}
-              height="calc(100vh - 76px)"
+              height={[
+                `calc(100svh - ${FOOTER_HEIGHT_SMALL})`,
+                `calc(100svh - ${FOOTER_HEIGHT_SMALL})`,
+                `calc(100svh - ${FOOTER_HEIGHT_LARGE})`,
+              ]}
               ref={handleRef}
-              direction={['column-reverse', 'row']}
+              direction={[
+                'column-reverse',
+                'column-reverse',
+                'column-reverse',
+                'row',
+              ]}
             >
               <GridItem
                 w="full"
                 bgColor={backgroundColor ? backgroundColor : 'gray.50'}
-                // bgColor={isOdd || isLast ? 'gray.50' : 'teal.400'}
                 position="relative"
               >
                 {useAnimation && <AnimatedDots isMobile={isMobile} />}
@@ -99,7 +107,7 @@ const Home: NextPage<IHomeProps> = ({ isMobile }) => {
                   src={image.src}
                   alt={image.alt}
                   priority
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: 'cover', minHeight: 175 }}
                 />
               </GridItem>
             </Flex>

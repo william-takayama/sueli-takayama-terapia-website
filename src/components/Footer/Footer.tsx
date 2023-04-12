@@ -1,3 +1,4 @@
+import { FOOTER_HEIGHT_LARGE, FOOTER_HEIGHT_SMALL } from '@/constants/size';
 import { SocialMedia } from '@/constants/social';
 import { getWhatsappLink } from '@/utils/socialMedia';
 import {
@@ -20,11 +21,11 @@ export const Footer = () => (
     bottom={0}
     w="full"
     bgColor="gray.200"
-    h={76}
+    h={[FOOTER_HEIGHT_SMALL, FOOTER_HEIGHT_LARGE]}
   >
     <Stack spacing={2} w="full">
       <Stack justify="space-between" direction="row" align="center">
-        <Heading as="h2" fontSize="sm" letterSpacing="wide">
+        <Heading as="h2" fontSize={['small', 'sm']} letterSpacing="wide">
           Sueli Takayama Terapia
         </Heading>
 
@@ -52,7 +53,7 @@ export const Footer = () => (
         </ButtonGroup>
       </Stack>
 
-      <Text color="gray.400" fontSize="xs">
+      <Text color="gray.400" fontSize={['xx-small', 'xs']}>
         &copy; {new Date().getFullYear()} Sueli Takayama, Inc. All rights
         reserved.
       </Text>
