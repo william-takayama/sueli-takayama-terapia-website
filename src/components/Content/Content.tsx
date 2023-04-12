@@ -61,7 +61,7 @@ export const Content = ({
       direction="column"
       w="full"
       h="full"
-      px={[8, 16, 32]}
+      px={[8, 8, 16, 32]}
       alignItems="center"
       justifyContent="center"
       zIndex={1}
@@ -69,11 +69,11 @@ export const Content = ({
       {subTitle ? (
         <Text
           textAlign="center"
-          fontSize={['xs', 'small']}
+          fontSize={['xs', 'xs', 'small']}
           wordBreak="keep-all"
           color={subTitle.color}
-          mt={[8, 0]}
-          mb={[8, 16]}
+          mt={[8, 8, 12, 0]}
+          mb={[8, 8, 12, 16]}
           textTransform="uppercase"
           letterSpacing="0.4rem"
           fontWeight={300}
@@ -87,7 +87,7 @@ export const Content = ({
           textAlign="center"
           as={nextIndex > 1 ? 'h2' : 'h1'}
           color={title.color}
-          fontSize={['1.5em', '3.5em']}
+          fontSize={['1.5em', '1.5em', '2.4em', '3.5em']}
           mt={subTitle ? 0 : 8}
         >
           {title.text}
@@ -95,12 +95,13 @@ export const Content = ({
       ) : null}
 
       <Text
-        my={[8, 16]}
+        my={[8, 8, 16]}
         textAlign="center"
-        fontSize={['small', 'medium']}
+        fontSize={['small', 'small', 'medium']}
         color={description.color}
         fontWeight={200}
         lineHeight={2}
+        noOfLines={[3, 6, 8]}
       >
         {description.text}
       </Text>
@@ -118,7 +119,7 @@ export const Content = ({
           >
             <Text
               textAlign="left"
-              fontSize={['x-small', 'small']}
+              fontSize={['x-small', 'x-small', 'small']}
               textTransform="uppercase"
               fontWeight={300}
               letterSpacing="0.2rem"
