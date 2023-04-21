@@ -7,6 +7,7 @@ import Image from 'next/image';
 import React from 'react';
 import { AnimatedDots } from '@/components/AnimatedDots/AnimatedDots';
 import { FOOTER_HEIGHT_LARGE, FOOTER_HEIGHT_SMALL } from '@/constants/size';
+import VideosCarousel from '@/components/Carousel/Carousel';
 
 interface IHomeProps {
   isMobile: boolean;
@@ -30,8 +31,14 @@ const Home: NextPage<IHomeProps> = ({ isMobile }) => {
 
   const scrollIntoView = (id: string) => {
     const node = getNodeById(id);
+    const boundingClientRect = node?.getBoundingClientRect();
 
-    node?.scrollIntoView({
+    if (!boundingClientRect) {
+      return;
+    }
+
+    window.scrollTo({
+      top: boundingClientRect.top + window.pageYOffset,
       behavior: 'smooth',
     });
   };
@@ -51,6 +58,7 @@ const Home: NextPage<IHomeProps> = ({ isMobile }) => {
             useAnimation,
             title,
             image,
+            videos,
             description,
             subTitle,
             CTAS,
@@ -86,7 +94,7 @@ const Home: NextPage<IHomeProps> = ({ isMobile }) => {
               ]}
             >
               <GridItem
-                w="full"
+                w={['full', 'full', '50%']}
                 bgColor={backgroundColor ? backgroundColor : 'gray.50'}
                 position="relative"
               >
@@ -101,14 +109,21 @@ const Home: NextPage<IHomeProps> = ({ isMobile }) => {
                   isLast={isLast}
                 />
               </GridItem>
-              <GridItem position="relative" w="full" h="full">
-                <Image
-                  fill
-                  src={image.src}
-                  alt={image.alt}
-                  priority
-                  style={{ objectFit: 'cover', minHeight: 175 }}
-                />
+              <GridItem
+                position="relative"
+                w={['full', 'full', '50%']}
+                h="full"
+              >
+                {image && (
+                  <Image
+                    fill
+                    src={image.src}
+                    alt={image.alt}
+                    priority
+                    style={{ objectFit: 'cover', minHeight: 175 }}
+                  />
+                )}
+                {videos && <VideosCarousel videos={videos} />}
               </GridItem>
             </Flex>
           );

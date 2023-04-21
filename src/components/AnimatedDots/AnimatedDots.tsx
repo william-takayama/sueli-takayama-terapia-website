@@ -27,6 +27,7 @@ const AnimatedDot = ({
       borderRadius: '50%',
       height,
       width,
+      overflow: 'hidden',
     }}
     layout
     initial={initialAnimation}
@@ -45,7 +46,14 @@ const getXValue = (value: number, unit: string, isMobile: boolean) => {
 
 export const AnimatedDots = ({ isMobile }: IAnimatedDotsProps) => {
   return (
-    <Box position="absolute" top={0} right={0} bottom={0} left={0}>
+    <Box
+      position="absolute"
+      top={0}
+      right={0}
+      bottom={0}
+      left={0}
+      overflow="hidden"
+    >
       <AnimatedDot
         width={4}
         height={4}

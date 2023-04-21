@@ -25,6 +25,14 @@ const buttonTheme = defineStyleConfig({
   },
 });
 
+export const captionCarouselTheme = defineStyleConfig({
+  baseStyle: {
+    height: '100%',
+    width: '100%',
+  },
+});
+
 export const customComponents = {
   Button: buttonTheme,
+  CaptionCarousel: captionCarouselTheme,
 };
