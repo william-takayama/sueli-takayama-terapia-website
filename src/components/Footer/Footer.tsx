@@ -20,6 +20,7 @@ export const Footer = () => (
     py={4}
     bottom={0}
     w="full"
+    zIndex={3}
     bgColor="gray.200"
     h={[FOOTER_HEIGHT_SMALL, FOOTER_HEIGHT_LARGE]}
   >

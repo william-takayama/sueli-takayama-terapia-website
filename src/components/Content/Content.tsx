@@ -72,7 +72,7 @@ export const Content = ({
           fontSize={['xs', 'xs', 'small']}
           wordBreak="keep-all"
           color={subTitle.color}
-          mt={[8, 8, 12, 0]}
+          mt={[4, 4, 12, 0]}
           mb={[8, 8, 12, 16]}
           textTransform="uppercase"
           letterSpacing="0.4rem"
@@ -88,25 +88,25 @@ export const Content = ({
           as={nextIndex > 1 ? 'h2' : 'h1'}
           color={title.color}
           fontSize={['1.5em', '1.5em', '2.4em', '3.5em']}
-          mt={subTitle ? 0 : 8}
+          mt={subTitle ? 0 : 4}
         >
           {title.text}
         </Heading>
       ) : null}
 
       <Text
-        my={[8, 8, 16]}
+        my={[4, 4, 16]}
         textAlign="center"
         fontSize={['small', 'small', 'medium']}
         color={description.color}
         fontWeight={200}
         lineHeight={2}
-        noOfLines={[3, 6, 8]}
+        noOfLines={[6, 8, 8]}
       >
         {description.text}
       </Text>
 
-      <Stack direction="column" spacing={4} mb={8}>
+      <Stack direction="column" spacing={4} mb={6}>
         {CTAS.map(({ id: buttonId, title, bgColor, color, icon, action }) => (
           <Button
             key={buttonId}
