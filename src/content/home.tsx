@@ -65,30 +65,27 @@ export const CONTENT = [
     videos: [
       {
         id: 'testimonial-01',
-        videoUrl:
-          'https://www.youtube.com/watch?v=R7OO00OmjWk&list=PL8ncryKn3V9-N7Y_sDmXeQutgOQDGVXIx&index=2',
+        videoUrl: 'https://www.youtube.com/watch?v=6c0-SfDtts8',
+        title: 'Alzheimer',
+        thumbnailImage: alzheimer,
+      },
+      {
+        id: 'testimonial-02',
+        videoUrl: 'https://www.youtube.com/watch?v=R7OO00OmjWk',
         title: 'Ansiedade e depressão',
         thumbnailImage: depression,
       },
       {
-        id: 'testimonial-02',
-        videoUrl: 'https://www.youtube.com/watch?v=5n0J8-JWiGc',
-        title: 'Cisto no Ovário',
-        thumbnailImage: cistoOvario,
-      },
-      {
         id: 'testimonial-03',
-        videoUrl:
-          'https://www.youtube.com/watch?v=t0TVCB9p9k0&list=PL8ncryKn3V9-N7Y_sDmXeQutgOQDGVXIx&index=3',
+        videoUrl: 'https://www.youtube.com/watch?v=t0TVCB9p9k0&t=33s',
         title: 'Fobia Social',
         thumbnailImage: socialPhobia,
       },
       {
         id: 'testimonial-04',
-        videoUrl:
-          'https://www.youtube.com/watch?v=6c0-SfDtts8&list=PL8ncryKn3V9-N7Y_sDmXeQutgOQDGVXIx&index=7',
-        title: 'Alzheimer',
-        thumbnailImage: alzheimer,
+        videoUrl: 'https://www.youtube.com/watch?v=5n0J8-JWiGc',
+        title: 'Cisto no Ovário',
+        thumbnailImage: cistoOvario,
       },
     ],
     description: {
@@ -107,31 +104,28 @@ export const CONTENT = [
     ],
   },
   {
-    id: 'access-bars',
-    subTitle: {
-      text: 'Métodos utilizados',
-      color: 'black',
-    },
-    useAnimation: false,
+    id: 'cinesiologia',
+    useAnimation: true,
+    backgroundColor: orange100,
     title: {
-      text: 'Barras de Access',
+      text: 'Cinesiologia Psicológica',
       color: 'black',
     },
     image: {
-      src: accessBarsBackground,
-      alt: 'access-bars',
+      src: cinesiologiaBackground,
+      alt: 'cinesiologia',
     },
     description: {
-      text: 'É uma terapia energética que consiste em toques sutis em 32 pontos específicos da cabeça, “deletando” crenças. limitantes, promovendo relaxamento profundo e equilíbrio fisico-emocional. Processos Corporais - do Access Consciousness',
+      text: 'Criada por Petho Sandor, é uma abordagem corporal que trabalha a integração corpo-mente, através de toques sutis.',
       color: 'rgba(0,0,0,0.49)',
     },
     CTAS: [
       {
         id: 'check-more-button-access-bars',
         title: 'Continue lendo',
-        icon: <HiArrowDown color={gray700} />,
-        bgColor: 'gray.100',
-        color: 'gray.700',
+        icon: <HiArrowDown color={orange100} />,
+        bgColor: 'orange.700',
+        color: 'orange.100',
         action: CTAActionName.SCROLL,
       },
     ],
@@ -217,28 +211,31 @@ export const CONTENT = [
     ],
   },
   {
-    id: 'cinesiologia',
-    useAnimation: true,
-    backgroundColor: orange100,
+    id: 'access-bars',
+    subTitle: {
+      text: 'Métodos utilizados',
+      color: 'black',
+    },
+    useAnimation: false,
     title: {
-      text: 'Cinesiologia Psicológica',
+      text: 'Barras de Access',
       color: 'black',
     },
     image: {
-      src: cinesiologiaBackground,
-      alt: 'cinesiologia',
+      src: accessBarsBackground,
+      alt: 'access-bars',
     },
     description: {
-      text: 'Criada por Petho Sandor, é uma abordagem corporal que trabalha a integração corpo-mente, através de toques sutis.',
+      text: 'É uma terapia energética que consiste em toques sutis em 32 pontos específicos da cabeça, “deletando” crenças. limitantes, promovendo relaxamento profundo e equilíbrio fisico-emocional. Processos Corporais - do Access Consciousness',
       color: 'rgba(0,0,0,0.49)',
     },
     CTAS: [
       {
         id: 'check-more-button-calatonia',
         title: 'Voltar para o topo',
-        icon: <HiArrowUp color={orange100} />,
-        bgColor: 'orange.700',
-        color: 'orange.100',
+        icon: <HiArrowUp color={gray700} />,
+        bgColor: 'gray.100',
+        color: 'gray.700',
         action: CTAActionName.SCROLL,
       },
     ],
